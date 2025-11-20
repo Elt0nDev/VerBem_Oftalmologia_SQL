@@ -1,0 +1,4 @@
+-- INSERT na tabela Medico
+INSERT INTO Medico (nome_completo, crm, especialidade, telefone, email) VALUES
+('Dr. Roberto Castro', 'CRM/CE 12345', 'Oftalmologia Geral', '(85) 3210-0000', 'roberto.castro@vermbem.com'),
+('Dra. Laura Pinho', 'CRM/CE 98765', 'Retina e Vítreo', '(85) 3210-0001', 'laura.pinho@vermbem.com');
