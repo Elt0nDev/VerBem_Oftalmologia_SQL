@@ -1,0 +1,53 @@
+-- 1. SELECT com JOIN e WHERE: Pacientes que consultaram com Dra. Laura Pinho
+SELECT 
+    P.nome_completo AS Paciente, 
+    C.data_hora AS Data_Consulta
+FROM 
+    Paciente P
+JOIN 
+    Consulta C ON P.id_paciente = C.id_paciente
+JOIN
+    Medico M ON C.id_medico = M.id_medico
+WHERE 
+    M.nome_completo = 'Dra. Laura Pinho'
+ORDER BY 
+    C.data_hora;
+
+-- 2. SELECT com GROUP BY e AVG: Média de valor das consultas por médico
+SELECT 
+    M.nome_completo AS Medico, 
+    M.especialidade,
+    AVG(C.valor) AS Media_Valor_Consulta
+FROM 
+    Medico M
+JOIN 
+    Consulta C ON M.id_medico = C.id_medico
+GROUP BY 
+    M.nome_completo, M.especialidade;
+
+-- 3. SELECT com WHERE e LIMIT: Pacientes de Fortaleza, ordenados por nome
+SELECT 
+    nome_completo, 
+    telefone, 
+    endereco_cidade
+FROM 
+    Paciente
+WHERE 
+    endereco_cidade = 'Fortaleza'
+ORDER BY 
+    nome_completo
+LIMIT 3;
+
+-- 4. SELECT com JOIN e LIKE: Exames de Acuidade Visual, mostrando o paciente
+SELECT 
+    P.nome_completo AS Paciente,
+    E.tipo_exame,
+    E.resultado
+FROM 
+    Exame E
+JOIN 
+    Consulta C ON E.id_consulta = C.id_consulta
+JOIN 
+    Paciente P ON C.id_paciente = P.id_paciente
+WHERE 
+    E.tipo_exame LIKE '%Acuidade%';
