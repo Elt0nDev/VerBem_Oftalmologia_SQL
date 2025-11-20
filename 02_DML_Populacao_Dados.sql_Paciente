@@ -1,0 +1,6 @@
+-- INSERT na tabela Paciente
+INSERT INTO Paciente (nome_completo, data_nascimento, cpf, telefone, email, endereco_rua, endereco_cidade) VALUES
+('Ana Clara Lima', '1985-05-15', '111.111.111-11', '(85) 98765-4321', 'ana.lima@email.com', 'Rua dos Sabias, 100', 'Fortaleza'),
+('Bruno Mendes Souza', '1992-11-20', '222.222.222-22', '(85) 99988-7766', 'bruno.souza@email.com', 'Av. Abolição, 2500', 'Fortaleza'),
+('Carlos Henrique Silva', '1970-03-01', '333.333.333-33', '(88) 99123-4567', 'carlos.h@email.com', 'Rua Principal, 50', 'Sobral'),
+('Diana Ferreira', '2001-08-25', '444.444.444-44', '(85) 98000-1122', 'diana.f@email.com', 'Rua das Flores, 45', 'Fortaleza');
